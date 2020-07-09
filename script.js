@@ -63,7 +63,16 @@ function searchMeal(e) {
   }
 }
 
-
+//scroll to meal
+function scrollDown() {
+    single_mealEl.scrollIntoView(
+        {
+            behavior:"smooth",
+            block:"start"
+        }
+    );
+    single_mealEl.scrollBottom += 10;
+}
 
 // Fetch meal by ID
 function getMealById(mealID) {
@@ -73,7 +82,7 @@ function getMealById(mealID) {
       const meal = data.meals[0];
 
       addMealToDOM(meal);
-    
+      scrollDown();
 
     });
 }
